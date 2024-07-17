@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'main/css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'main/css/weather-border.css' %}">
+    <title>Получи свой прогноз</title>
+</head>
+<body>
+    <div class="weather-block">
+        <div class="city-select">
+            <input type="text" class="city-input" id="my-city" name="city" placeholder="Введите город" list="cities">
+            <input type="hidden" id="hidden-lat" name="lat">
+            <input type="hidden" id="hidden-lon" name="lon">
+            <datalist id="cities">
+            </datalist>
+            <button class="submit" onclick="Submit()">Искать</button>
+        </div>
+
+        <div id="forecast-container"></div>
+    </div>
+
+    <script src="{% static 'main/js/help_city.js' %}"></script>
+    <script src="{% static 'main/js/search_city.js' %}"></script>
+</body>
+</html>
